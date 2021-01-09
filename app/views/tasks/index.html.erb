@@ -1,2 +1,19 @@
 <h1>My Tasks</h1>
-<p><%= @tasks %></p>
+
+  <% @tasks.each do |t| %>
+    <div class="form-check">
+      <!-- <p><%= t.completed %></p> -->
+      <% if t.completed %>
+      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="..." checked="">
+      <% else %>
+      <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+      <% end %>
+      <%= link_to t.title, task_path(t) %>
+      <%= link_to "delete task", task_path(t), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+
+    </div>
+   <!--  <%= t.title %> -->
+  <% end %>
+
+
+<%= link_to "New task", tasks_new_path %>
