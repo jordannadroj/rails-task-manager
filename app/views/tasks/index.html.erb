@@ -9,7 +9,7 @@
       <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
       <% end %>
       <%= link_to t.title, task_path(t) %>
-      <%= link_to "delete task", task_path(t), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
+      <%= link_to "🗑", task_path(t), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>
 
     </div>
    <!--  <%= t.title %> -->
